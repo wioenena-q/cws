@@ -5,4 +5,5 @@
 #endif
 
 unsigned long cws_str_len(const char* str);
+long cws_char_index_of(const char* str, const char c);
 #endif

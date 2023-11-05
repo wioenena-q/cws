@@ -8,3 +8,19 @@ unsigned long cws_str_len(const char* str) {
 
   return length;
 }
+
+long cws_char_index_of(const char* str, const char c) {
+  if (str == NULL) return -1;
+  
+  long i = 0;
+  
+  while (1) {
+    char current = str[i];
+    if (current == '\0') return -1;
+    if (current == c) return i;
+
+    ++i;
+  }
+
+  return -1;
+}
