@@ -8,12 +8,17 @@ void test_cws_char_index_of();
 void test_cws_index_of();
 void test_cws_char_to_ascii_code();
 void test_cws_ascii_code_to_char();
-
+void test_cws_concat();
+void test_cws_eq();
 
 int main(void) {
   test_cws_str_len();
   test_cws_char_index_of();
   test_cws_index_of();
+  test_cws_char_to_ascii_code();
+  test_cws_ascii_code_to_char();
+  test_cws_concat();
+  test_cws_eq();
 }
 
 void test_cws_str_len() {
@@ -49,4 +54,12 @@ void test_cws_ascii_code_to_char() {
   assert(CWS_ASCII_CODE_TO_CHAR(65) == 'A');
 }
 
+void test_cws_concat() {
+  assert(cws_eq(cws_concat("Hello", " World!"), "Hello World!") == 1);
+}
 
+void test_cws_eq() {
+  assert(cws_eq(NULL, NULL) == 1);
+  assert(cws_eq("Hello", "World") == 0);
+  assert(cws_eq("Hello", "Hello") == 1);
+}
