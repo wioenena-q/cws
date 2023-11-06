@@ -41,3 +41,31 @@ long cws_index_of(const char* str, const char* s_str) {
 
   return -1;
 }
+
+char* cws_concat(const char* str, const char* str2) {
+  unsigned long str_len = cws_str_len(str);
+  unsigned long str2_len = cws_str_len(str2);
+  unsigned long buf_len  = str_len + str2_len;
+
+  char* buf = (char*) malloc(buf_len + 1);
+  buf[buf_len + 1] = '\0';
+
+  for (unsigned long i = 0; i < str_len; ++i) 
+    buf[i] = str[i];
+
+  for (unsigned long i = 0; i < str2_len; ++i)
+    buf[i + str_len] = str2[i];
+  
+  return buf;
+}
+
+int cws_eq(const char* str1, const char* str2) {
+  if (str1 == str2) return 1; // NULL?
+  unsigned long len = cws_str_len(str1);
+
+  for (unsigned long i = 0; i < len; ++i) {
+    if (str1[i] != str2[i]) return 0;
+  }
+
+  return 1;
+}
