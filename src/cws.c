@@ -59,7 +59,7 @@ char* cws_concat(const char* str, const char* str2) {
   return buf;
 }
 
-int cws_eq(const char* str1, const char* str2) {
+unsigned int cws_eq(const char* str1, const char* str2) {
   if (str1 == str2) return 1; // NULL?
   unsigned long len = cws_str_len(str1);
 
