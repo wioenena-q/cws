@@ -5,6 +5,10 @@
 #endif
 #include <stdlib.h>
 
+
+#define CWS_CHAR_TO_ASCII_CODE(c) (int) c
+#define CWS_ASCII_CODE_TO_CHAR(c) (char) c
+
 unsigned long cws_str_len(const char* str);
 long cws_char_index_of(const char* str, const char c);
 long cws_index_of(const char* str, const char* s_str);

@@ -6,6 +6,9 @@
 void test_cws_str_len();
 void test_cws_char_index_of();
 void test_cws_index_of();
+void test_cws_char_to_ascii_code();
+void test_cws_ascii_code_to_char();
+
 
 int main(void) {
   test_cws_str_len();
@@ -37,3 +40,13 @@ void test_cws_index_of() {
   assert(cws_index_of(str, "???") == -1);
   assert(cws_index_of(NULL, "World!") == -1);
 }
+
+void test_cws_char_to_ascii_code() {
+  assert(CWS_CHAR_TO_ASCII_CODE('A') == 65);
+}
+
+void test_cws_ascii_code_to_char() {
+  assert(CWS_ASCII_CODE_TO_CHAR(65) == 'A');
+}
+
+
