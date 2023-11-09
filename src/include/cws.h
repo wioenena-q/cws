@@ -17,4 +17,5 @@ unsigned int cws_eq(const char* str1, const char* str2);
 char cws_at(const char* str, unsigned long pos);
 unsigned int cws_ends_with(const char* str, const char* s_str);
 char* cws_to_uppercase(const char* str);
+char* cws_to_lowercase(const char* str);
 #endif
