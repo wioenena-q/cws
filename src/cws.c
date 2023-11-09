@@ -86,3 +86,19 @@ unsigned int cws_ends_with(const char* str, const char* s_str) {
 
   return 1;
 }
+
+char* cws_to_uppercase(const char* str) {
+  if (str == NULL) return NULL;
+  unsigned long len = cws_str_len(str);
+
+  char* buf = (char*) malloc(len + 1);
+  buf[len + 1] = '\0';
+
+  for (unsigned long i = 0; i < len; ++i) {
+    unsigned int c = (int) str[i];
+
+    buf[i] = c >= 0x41 && c <= 0x5A ? (char)(c + 0x20) : (char)c;
+  }
+
+  return buf;
+}

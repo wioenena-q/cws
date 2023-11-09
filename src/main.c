@@ -12,6 +12,7 @@ void test_cws_concat();
 void test_cws_eq();
 void test_cws_at();
 void test_cws_ends_with();
+void test_cws_to_uppercase();
 
 int main(void) {
   test_cws_str_len();
@@ -77,4 +78,9 @@ void test_cws_ends_with() {
   assert(cws_ends_with(NULL, NULL) == 0);
   assert(cws_ends_with("Hello World!", "World!") == 1);
   assert(cws_ends_with("Hello World!", "Hello") == 0);
+}
+
+void test_cws_to_uppercase() {
+  assert(cws_to_uppercase(NULL) == NULL);
+  assert(cws_eq(cws_to_uppercase("Hello World!"), "HELLO WORLD!") == 1);
 }
