@@ -69,3 +69,8 @@ unsigned int cws_eq(const char* str1, const char* str2) {
 
   return 1;
 }
+
+char cws_at(const char* str, unsigned long pos) {
+  if (str == NULL) return '\0';
+  return str[pos];
+}
