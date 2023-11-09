@@ -11,6 +11,7 @@ void test_cws_ascii_code_to_char();
 void test_cws_concat();
 void test_cws_eq();
 void test_cws_at();
+void test_cws_ends_with();
 
 int main(void) {
   test_cws_str_len();
@@ -70,4 +71,10 @@ void test_cws_at() {
   assert(cws_at(NULL, 1) == 0);
   assert(cws_at("Hello World!", 1) == 'e');
   assert(cws_at("Hello World!", cws_char_index_of("Hello World!", '!')) == '!');
+}
+
+void test_cws_ends_with() {
+  assert(cws_ends_with(NULL, NULL) == 0);
+  assert(cws_ends_with("Hello World!", "World!") == 1);
+  assert(cws_ends_with("Hello World!", "Hello") == 0);
 }

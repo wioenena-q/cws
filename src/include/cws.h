@@ -15,4 +15,5 @@ long cws_index_of(const char* str, const char* s_str);
 char* cws_concat(const char* str, const char* str2);
 unsigned int cws_eq(const char* str1, const char* str2);
 char cws_at(const char* str, unsigned long pos);
+unsigned int cws_ends_with(const char* str, const char* s_str);
 #endif

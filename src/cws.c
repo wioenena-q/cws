@@ -74,3 +74,15 @@ char cws_at(const char* str, unsigned long pos) {
   if (str == NULL) return '\0';
   return str[pos];
 }
+
+unsigned int cws_ends_with(const char* str, const char* s_str) {
+  if (str == NULL) return 0;
+  unsigned long s_str_len = cws_str_len(s_str);
+  unsigned long str_len = cws_str_len(str);
+
+  for (unsigned long i = 0; i < s_str_len; ++i) {
+    if (str[str_len - s_str_len] != s_str[i]) return 0;
+  }
+
+  return 1;
+}
